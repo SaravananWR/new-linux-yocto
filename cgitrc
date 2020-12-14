@@ -1,2 +1,3 @@
 desc=Yocto Linux Embedded kernel
-section=Yocto Linux Kernelhide=0
+section=Yocto Linux Kernel
+hide=0
