@@ -2380,6 +2380,24 @@ int vb2_core_queue_init(struct vb2_queue *q)
 	/*
 	 * Sanity check
 	 */
+	if (!q)
+	    printk("q failed\n");
+	if (!q->ops)
+	    printk("q->ops failed\n");
+	if (!q->mem_ops)
+	    printk("q->mem_ops failed\n");
+	if (!q->type)
+	    printk("q->type failed\n");
+	if (!q->io_modes)
+	    printk("q->io_modes failed\n");
+	if (!q->ops->queue_setup)
+	    printk("q->queue_setup failed\n");
+	if (!q->ops->buf_queue)
+	    printk("q->buf_queue failed\n");
+
+	/*
+	 * Sanity check
+	 */
 	if (WARN_ON(!q)			  ||
 	    WARN_ON(!q->ops)		  ||
 	    WARN_ON(!q->mem_ops)	  ||
