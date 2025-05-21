@@ -163,6 +163,7 @@ static ssize_t show_trans_table(struct cpufreq_policy *policy, char *buf)
 	}
 
 	if (len >= PAGE_SIZE - 1) {
+		pr_warn_once("len= %d, PAGE_SIZE=%d \n",len,PAGE_SIZE);
 		pr_warn_once("cpufreq transition table exceeds PAGE_SIZE. Disabling\n");
 		return -EFBIG;
 	}
